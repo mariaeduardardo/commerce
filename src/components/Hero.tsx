@@ -51,16 +51,16 @@ export const Hero: React.FC = () => {
               </a>
             </div>
 
-            <div className="animate-hero-rise grid w-full grid-cols-2 gap-2.5 border-t border-white/20 pt-4 text-[11px] text-blue-100 [animation-delay:360ms] sm:grid-cols-2 sm:gap-x-4 sm:text-left sm:text-xs">
-              <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:justify-start">
+            <div className="animate-hero-rise grid w-full grid-cols-1 gap-2.5 border-t border-white/20 pt-4 text-[11px] text-blue-100 [animation-delay:360ms] sm:grid-cols-2 sm:gap-x-4 sm:text-left sm:text-xs lg:grid-cols-3 lg:items-center lg:justify-center lg:text-center">
+              <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:justify-start lg:justify-center">
                 <CheckCircle2 className="w-4 h-4 text-emerald-300 flex-shrink-0" />
                 <span className="font-medium text-white">{copy.hero.noFee}</span>
               </div>
-              <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:justify-start">
+              <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:justify-start lg:justify-center">
                 <CheckCircle2 className="w-4 h-4 text-emerald-300 flex-shrink-0" />
                 <span className="font-medium text-white">{copy.hero.fastDelivery}</span>
               </div>
-              <div className="col-span-2 flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:col-span-1 sm:justify-start">
+              <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:col-span-1 sm:justify-start lg:justify-center">
                 <div className="flex text-amber-300">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-300" />

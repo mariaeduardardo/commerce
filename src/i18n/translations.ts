@@ -55,6 +55,7 @@ const pt = {
   footer: {
     description: 'Agência especializada no desenvolvimento de páginas de alta conversão, landing pages estratégicas e sistemas sob medida para empresas que buscam liderança e autoridade digital.',
     ownership: 'Projetos 100% proprietários • Sem mensalidades obrigatórias',
+    location: 'Presença internacional: suporte e desenvolvimento para o Brasil, EUA e Europa.',
     navigation: 'Navegação',
     solutions: 'Soluções',
     contact: 'Atendimento Direto',
@@ -138,6 +139,7 @@ const en = {
   footer: {
     description: 'Agency specialized in high-converting pages, strategic landing pages, and custom systems for companies seeking digital leadership and authority.',
     ownership: '100% proprietary projects • No mandatory monthly fees',
+    location: 'International presence: support and development for Brazil, the US, and Europe.',
     navigation: 'Navigation',
     solutions: 'Solutions',
     contact: 'Direct Support',

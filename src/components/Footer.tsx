@@ -127,7 +127,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-emerald-300 flex-shrink-0 mt-0.5" />
-                <span className="font-medium">{SITE_CONFIG.location}</span>
+                <span className="font-medium">{copy.footer.location}</span>
               </li>
             </ul>
           </div>

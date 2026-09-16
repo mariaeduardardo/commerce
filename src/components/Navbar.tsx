@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
           {/* Official Logo */}
           <a
             href="#inicio"
-            className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg min-h-[44px]"
+            className="flex min-w-0 items-center gap-2.5 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg min-h-[44px]"
             aria-label="Commerce Visual - Página Inicial"
           >
             <img
@@ -68,14 +68,14 @@ export const Navbar: React.FC = () => {
               loading="eager"
               decoding="async"
               fetchPriority="high"
-              className="h-12 w-auto max-w-[60px] object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
+              className="h-12 w-auto max-w-[60px] flex-shrink-0 object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="text-base sm:text-xl font-black tracking-tight text-white">
+            <div className="flex min-w-0 flex-col">
+              <div className="flex min-w-0 items-center gap-1.5">
+                <span className="text-sm leading-none tracking-tight text-white sm:text-xl sm:leading-normal font-black">
                   Commerce
                 </span>
-                <span className="text-base sm:text-xl font-medium tracking-tight text-blue-100">
+                <span className="text-sm leading-none tracking-tight text-blue-100 sm:text-xl sm:leading-normal font-medium">
                   Visual
                 </span>
               </div>
@@ -128,24 +128,24 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center md:hidden gap-2">
+          <div className="ml-auto flex items-center gap-1.5 md:hidden">
             <a
               href={SITE_CONFIG.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-h-[44px] min-w-[44px] p-2 rounded-xl bg-white text-[#0241ff] font-bold text-sm flex items-center justify-center shadow-md"
+              className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white text-[#0241ff] font-bold text-sm shadow-md"
               aria-label="WhatsApp"
             >
-              <MessageCircle className="w-5 h-5 text-emerald-600" />
+              <MessageCircle className="w-4 h-4 text-emerald-600" />
             </a>
-            <div className="flex h-11 items-center gap-1 rounded-xl border border-white/20 bg-white/10 px-2 transition-colors hover:bg-white/20">
-              <Globe2 className="h-4 w-4 text-blue-100" aria-hidden="true" />
+            <div className="flex h-10 flex-shrink-0 items-center gap-1 rounded-xl border border-white/20 bg-white/10 px-1.5 transition-colors hover:bg-white/20">
+              <Globe2 className="h-3.5 w-3.5 text-blue-100" aria-hidden="true" />
               <label className="sr-only" htmlFor="mobile-header-language-select">{copy.labels.language}</label>
               <select
                 id="mobile-header-language-select"
                 value={language}
                 onChange={(event) => setLanguage(event.target.value as typeof language)}
-                className="max-w-[42px] bg-transparent text-[11px] font-bold text-white outline-none [&>option]:text-slate-900"
+                className="max-w-[38px] bg-transparent text-[10px] font-bold text-white outline-none [&>option]:text-slate-900"
               >
                 {LANGUAGE_OPTIONS.map((option) => (
                   <option key={option.value} value={option.value}>{option.label}</option>
@@ -155,11 +155,11 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`relative z-[60] min-h-[44px] min-w-[44px] p-2 text-white rounded-full border border-white/30 bg-white/10 flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${mobileMenuOpen ? 'rotate-90' : ''}`}
+              className={`relative z-[60] flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition-all duration-300 hover:bg-white/20 hover:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${mobileMenuOpen ? 'rotate-90' : ''}`}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? copy.labels.closeMenu : copy.labels.openMenu}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
