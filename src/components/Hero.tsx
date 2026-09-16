@@ -6,8 +6,11 @@ import {
   MessageCircle 
 } from 'lucide-react';
 import { SITE_CONFIG } from '../data/siteData';
+import { useLanguage } from '../i18n';
 
 export const Hero: React.FC = () => {
+  const { copy } = useLanguage();
+
   return (
     <section
       id="inicio"
@@ -20,17 +23,12 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="flex flex-col items-start space-y-4 text-left sm:space-y-5 lg:col-span-7 lg:pr-6">
             <h1 className="animate-hero-rise max-w-[680px] text-[2.35rem] font-black leading-[0.98] tracking-[-0.05em] text-white [animation-delay:90ms] break-words sm:text-4xl md:text-5xl lg:text-[3.8rem] xl:text-[4.35rem]">
-              Seu próximo cliente começa com uma{' '}
-              <span className="text-gradient-white underline decoration-white/55 decoration-wavy underline-offset-8">
-                experiência melhor
-              </span>.
+              {copy.hero.title}
             </h1>
 
             <p className="animate-hero-rise max-w-[38rem] text-sm font-medium leading-relaxed text-blue-100/95 [animation-delay:180ms] break-words sm:text-base lg:text-lg xl:text-xl">
-              Criamos páginas e sistemas que posicionam sua marca, simplificam a decisão de compra e transformam atenção em oportunidades reais.{' '}
-              <strong className="font-extrabold text-white">
-                Você investe uma vez e o projeto é seu
-              </strong>.
+              {copy.hero.description}{' '}
+              <strong className="font-extrabold text-white">{copy.hero.emphasis}</strong>.
             </p>
 
             <div className="animate-hero-rise flex w-full flex-col items-stretch gap-3 pt-1 [animation-delay:270ms] sm:w-auto sm:flex-row sm:items-center">
@@ -41,7 +39,7 @@ export const Hero: React.FC = () => {
                 className="group inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-2xl bg-white px-6 py-3.5 text-base font-extrabold text-[#0241ff] shadow-[0_18px_50px_rgba(0,20,90,0.35)] transition-all duration-300 hover:-translate-y-1 hover:bg-blue-50 hover:shadow-[0_20px_60px_rgba(1,23,96,0.38)] active:scale-[0.95] sm:w-auto sm:px-8 sm:py-4"
               >
                 <MessageCircle className="w-5 h-5 text-emerald-600" />
-                <span>Quero transformar meu site</span>
+                <span>{copy.hero.primaryCta}</span>
                 <ArrowRight className="w-5 h-5 text-[#0241ff] group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -49,18 +47,18 @@ export const Hero: React.FC = () => {
                 href="#solucoes"
                 className="inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-6 py-3.5 text-base font-bold text-white backdrop-blur-md transition-all duration-200 hover:-translate-y-1 hover:bg-white/20 active:scale-[0.96] sm:w-auto"
               >
-                <span>Ver como podemos ajudar</span>
+                <span>{copy.hero.secondaryCta}</span>
               </a>
             </div>
 
             <div className="animate-hero-rise grid w-full grid-cols-2 gap-2.5 border-t border-white/20 pt-4 text-[11px] text-blue-100 [animation-delay:360ms] sm:grid-cols-2 sm:gap-x-4 sm:text-left sm:text-xs">
               <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:justify-start">
                 <CheckCircle2 className="w-4 h-4 text-emerald-300 flex-shrink-0" />
-                <span className="font-medium text-white">Sem mensalidade</span>
+                <span className="font-medium text-white">{copy.hero.noFee}</span>
               </div>
               <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:justify-start">
                 <CheckCircle2 className="w-4 h-4 text-emerald-300 flex-shrink-0" />
-                <span className="font-medium text-white">Entrega ágil</span>
+                <span className="font-medium text-white">{copy.hero.fastDelivery}</span>
               </div>
               <div className="col-span-2 flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:col-span-1 sm:justify-start">
                 <div className="flex text-amber-300">
@@ -68,7 +66,7 @@ export const Hero: React.FC = () => {
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-300" />
                   ))}
                 </div>
-                <span className="font-bold text-white">5.0 no Google</span>
+                <span className="font-bold text-white">{copy.hero.rating}</span>
               </div>
             </div>
           </div>
@@ -79,7 +77,7 @@ export const Hero: React.FC = () => {
               <div className="relative overflow-hidden rounded-[2rem] border border-white/25 bg-[#0036d6]/85 p-2 shadow-[0_28px_80px_rgba(2,13,77,0.42)] backdrop-blur-xl sm:p-3">
                 <img
                   src="/conversion-dashboard.svg"
-                  alt="Painel de conversão com métricas, gráfico de leads e notificações em tempo real"
+                  alt={copy.hero.dashboardAlt}
                   width={1200}
                   height={900}
                   className="h-auto w-full rounded-[1.5rem] object-contain"

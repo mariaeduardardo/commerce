@@ -1,8 +1,10 @@
 import React from 'react';
 import { ArrowUp, MessageCircle, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
-import { NAV_LINKS, SITE_CONFIG } from '../data/siteData';
+import { SITE_CONFIG } from '../data/siteData';
+import { useLanguage } from '../i18n';
 
 export const Footer: React.FC = () => {
+  const { copy } = useLanguage();
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -41,22 +43,22 @@ export const Footer: React.FC = () => {
             </a>
 
             <p className="text-blue-100 text-sm leading-relaxed max-w-sm">
-              Agência especializada no desenvolvimento de páginas de alta conversão, landing pages estratégicas e sistemas sob medida para empresas que buscam liderança e autoridade digital.
+              {copy.footer.description}
             </p>
 
             <div className="pt-2 flex items-center gap-2 text-xs text-white font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-              <span>Projetos 100% proprietários • Sem mensalidades obrigatórias</span>
+              <span>{copy.footer.ownership}</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
-              Navegação
+              {copy.footer.navigation}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {NAV_LINKS.map((link) => (
+              {copy.nav.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -72,27 +74,27 @@ export const Footer: React.FC = () => {
           {/* Solutions Links */}
           <div className="space-y-4">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
-              Soluções
+              {copy.footer.solutions}
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a href="#solucoes" className="hover:text-white transition-colors font-medium">
-                  Landing Pages de Alta Conversão
+                  {copy.footer.solutionLinks[0]}
                 </a>
               </li>
               <li>
                 <a href="#solucoes" className="hover:text-white transition-colors font-medium">
-                  Sistemas Web & SaaS Sob Medida
+                  {copy.footer.solutionLinks[1]}
                 </a>
               </li>
               <li>
                 <a href="#solucoes" className="hover:text-white transition-colors font-medium">
-                  Identidade Visual Corporativa
+                  {copy.footer.solutionLinks[2]}
                 </a>
               </li>
               <li>
                 <a href="#vantagens" className="hover:text-white transition-colors font-medium">
-                  Otimização Core Web Vitals
+                  {copy.footer.solutionLinks[3]}
                 </a>
               </li>
             </ul>
@@ -101,7 +103,7 @@ export const Footer: React.FC = () => {
           {/* Contact details */}
           <div className="space-y-4">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
-              Atendimento Direto
+              {copy.footer.contact}
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2.5">
@@ -135,7 +137,7 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright bar */}
         <div className="mt-14 pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-200">
           <div>
-            © {SITE_CONFIG.year} {SITE_CONFIG.name}. Todos os direitos reservados. CNPJ: {SITE_CONFIG.cnpj}.
+              © {SITE_CONFIG.year} {SITE_CONFIG.name}. {copy.footer.copyright} CNPJ: {SITE_CONFIG.cnpj}.
           </div>
 
           <div className="flex items-center gap-6">
@@ -145,7 +147,7 @@ export const Footer: React.FC = () => {
               className="inline-flex items-center gap-1.5 text-white hover:text-blue-200 font-bold transition-colors"
               aria-label="Voltar ao topo da página"
             >
-              <span>Voltar ao topo</span>
+              <span>{copy.footer.backToTop}</span>
               <ArrowUp className="w-4 h-4" />
             </button>
           </div>

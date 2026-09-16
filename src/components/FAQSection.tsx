@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { ChevronDown, MessageCircle, ArrowRight } from 'lucide-react';
-import { FAQS, SITE_CONFIG } from '../data/siteData';
+import { SITE_CONFIG } from '../data/siteData';
+import { useLanguage } from '../i18n';
 
 export const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { copy } = useLanguage();
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -18,19 +20,19 @@ export const FAQSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-xs font-bold text-white mb-4 backdrop-blur-md">
-            <span>Tira-Dúvidas</span>
+            <span>{copy.faq.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-white tracking-tight break-words">
-            Perguntas Frequentes
+            {copy.faq.title}
           </h2>
           <p className="mt-4 text-sm sm:text-base lg:text-lg text-blue-100">
-            Transparência absoluta do início ao fim. Veja as respostas para as principais dúvidas dos nossos clientes.
+            {copy.faq.description}
           </p>
         </div>
 
         {/* Accordion list */}
         <div className="space-y-3 sm:space-y-4">
-          {FAQS.map((faq, index) => {
+          {copy.faqData.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
@@ -73,7 +75,7 @@ export const FAQSection: React.FC = () => {
         {/* Objection solver CTA */}
         <div className="mt-8 rounded-[28px] border border-white/25 bg-blue-900/35 p-4 text-center shadow-[0_22px_60px_rgba(4,19,89,0.28)] backdrop-blur-xl sm:mt-10 sm:p-6 lg:p-8">
           <p className="text-base font-bold text-white">
-            Ficou com alguma dúvida específica sobre o seu projeto?
+            {copy.faq.objection}
           </p>
           <a
             href={SITE_CONFIG.whatsappUrl}
@@ -82,7 +84,7 @@ export const FAQSection: React.FC = () => {
             className="mt-4 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3 text-sm font-black text-[#0241ff] shadow-md transition-all duration-200 hover:bg-blue-50 active:scale-[0.96] sm:w-auto"
           >
             <MessageCircle className="w-4 h-4 text-emerald-600" />
-            <span>Converse com nosso especialista agora pelo WhatsApp</span>
+            <span>{copy.faq.cta}</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

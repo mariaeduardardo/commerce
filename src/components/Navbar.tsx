@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
-import { NAV_LINKS, SITE_CONFIG } from '../data/siteData';
+import { Menu, X, ArrowUpRight, MessageCircle, Globe2 } from 'lucide-react';
+import { SITE_CONFIG } from '../data/siteData';
+import { LANGUAGE_OPTIONS, useLanguage } from '../i18n';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeHash, setActiveHash] = useState(() => (typeof window !== 'undefined' ? window.location.hash || '#inicio' : '#inicio'));
+  const { language, setLanguage, copy } = useLanguage();
+  const localizedNavLinks = copy.nav;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,14 +80,14 @@ export const Navbar: React.FC = () => {
                 </span>
               </div>
               <span className="text-[10px] font-semibold uppercase tracking-widest text-blue-100/90 -mt-1 hidden sm:inline-block">
-                Tecnologia & Design
+                {copy.labels.technology}
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2">
-            {NAV_LINKS.map((link) => (
+            {localizedNavLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -97,15 +100,29 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop CTA Button */}
           <div className="hidden md:flex items-center gap-3">
+            <div className="flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-2.5 py-1.5 transition-colors hover:bg-white/20">
+              <Globe2 className="h-4 w-4 text-blue-100" aria-hidden="true" />
+              <label className="sr-only" htmlFor="language-select">{copy.labels.language}</label>
+              <select
+                id="language-select"
+                value={language}
+                onChange={(event) => setLanguage(event.target.value as typeof language)}
+                className="bg-transparent text-xs font-bold text-white outline-none [&>option]:text-slate-900"
+              >
+                {LANGUAGE_OPTIONS.map((option) => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+              </select>
+            </div>
             <a
               href={SITE_CONFIG.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-extrabold text-[#0241ff] bg-white hover:bg-blue-50 shadow-xl shadow-[#002187]/30 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group"
-              aria-label="Fale pelo WhatsApp com a Commerce Visual"
+              aria-label={copy.labels.whatsapp}
             >
               <MessageCircle className="w-4 h-4 text-emerald-600 transition-transform group-hover:rotate-12" />
-              <span>Fale pelo WhatsApp</span>
+              <span>{copy.labels.whatsapp}</span>
               <ArrowUpRight className="w-4 h-4 text-[#0241ff] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
@@ -121,12 +138,26 @@ export const Navbar: React.FC = () => {
             >
               <MessageCircle className="w-5 h-5 text-emerald-600" />
             </a>
+            <div className="flex h-11 items-center gap-1 rounded-xl border border-white/20 bg-white/10 px-2 transition-colors hover:bg-white/20">
+              <Globe2 className="h-4 w-4 text-blue-100" aria-hidden="true" />
+              <label className="sr-only" htmlFor="mobile-header-language-select">{copy.labels.language}</label>
+              <select
+                id="mobile-header-language-select"
+                value={language}
+                onChange={(event) => setLanguage(event.target.value as typeof language)}
+                className="max-w-[42px] bg-transparent text-[11px] font-bold text-white outline-none [&>option]:text-slate-900"
+              >
+                {LANGUAGE_OPTIONS.map((option) => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+              </select>
+            </div>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`relative z-[60] min-h-[44px] min-w-[44px] p-2 text-white rounded-full border border-white/30 bg-white/10 flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${mobileMenuOpen ? 'rotate-90' : ''}`}
               aria-expanded={mobileMenuOpen}
-              aria-label={mobileMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
+              aria-label={mobileMenuOpen ? copy.labels.closeMenu : copy.labels.openMenu}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -168,8 +199,8 @@ export const Navbar: React.FC = () => {
               <X className="h-6 w-6" />
             </button>
           </div>
-          <nav className="mt-8 flex flex-col space-y-2" aria-label="Navegação mobile">
-            {NAV_LINKS.map((link, index) => (
+          <nav className="mt-8 flex flex-col space-y-2" aria-label={copy.labels.mobileNavigation}>
+            {localizedNavLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -197,11 +228,11 @@ export const Navbar: React.FC = () => {
             >
               <span className="flex items-center gap-3">
                 <MessageCircle className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
-                <span>Fale pelo WhatsApp Agora</span>
+                <span>{copy.labels.mobileWhatsapp}</span>
               </span>
               <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
-            <p className="mt-3 text-center text-xs font-medium text-blue-100/60">Resposta rápida para tirar seu projeto do papel.</p>
+            <p className="mt-3 text-center text-xs font-medium text-blue-100/60">{copy.labels.quickResponse}</p>
           </div>
         </div>
       </div>

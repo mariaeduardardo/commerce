@@ -8,7 +8,8 @@ import {
   TrendingUp,
   ArrowRight,
 } from 'lucide-react';
-import { FEATURES, SITE_CONFIG } from '../data/siteData';
+import { SITE_CONFIG } from '../data/siteData';
+import { useLanguage } from '../i18n';
 
 const iconMap = {
   ShieldCheck,
@@ -20,26 +21,25 @@ const iconMap = {
 };
 
 export const Features: React.FC = () => {
+  const { copy } = useLanguage();
+
   return (
     <section id="vantagens" className="premium-shell relative overflow-hidden bg-[#0241ff] py-16 sm:py-24 lg:py-32">
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[140px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="soft-label mb-4">Diferenciais Exclusivos</div>
+          <div className="soft-label mb-4">{copy.features.eyebrow}</div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-white tracking-tight break-words">
-            Por que empresas escolhem a{' '}
-            <span className="underline decoration-white/40 decoration-wavy underline-offset-8">
-              Commerce Visual
-            </span>?
+            {copy.features.title}
           </h2>
           <p className="mt-4 text-sm sm:text-base lg:text-lg text-blue-100 leading-relaxed">
-            Eliminamos os vícios das agências tradicionais: nada de mensalidades infinitas, atrasos misteriosos ou páginas lentas que desperdiçam seu investimento em anúncios.
+            {copy.features.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {FEATURES.map((feature) => {
+          {copy.featuresData.map((feature) => {
             const IconComponent = iconMap[feature.icon as keyof typeof iconMap] || ShieldCheck;
             const isNoFee = feature.id === 'sem-mensalidade';
 
@@ -81,7 +81,7 @@ export const Features: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 text-[11px] font-bold text-white transition-colors hover:text-blue-200"
                   >
-                    <span>Saber mais</span>
+                    <span>{copy.features.learnMore}</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
