@@ -19,8 +19,6 @@ export const Hero: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="flex flex-col items-start space-y-4 text-left sm:space-y-5 lg:col-span-7 lg:pr-6">
-            <div className="soft-label animate-hero-rise [animation-delay:60ms]">Agência Premium</div>
-
             <h1 className="animate-hero-rise max-w-[680px] text-[2.35rem] font-black leading-[0.98] tracking-[-0.05em] text-white [animation-delay:90ms] break-words sm:text-4xl md:text-5xl lg:text-[3.8rem] xl:text-[4.35rem]">
               Seu próximo cliente começa com uma{' '}
               <span className="text-gradient-white underline decoration-white/55 decoration-wavy underline-offset-8">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, MessageCircle, ArrowRight } from 'lucide-react';
+import { ChevronDown, MessageCircle, ArrowRight } from 'lucide-react';
 import { FAQS, SITE_CONFIG } from '../data/siteData';
 
 export const FAQSection: React.FC = () => {
@@ -18,7 +18,6 @@ export const FAQSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-xs font-bold text-white mb-4 backdrop-blur-md">
-            <HelpCircle className="w-3.5 h-3.5" />
             <span>Tira-Dúvidas</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-white tracking-tight break-words">
