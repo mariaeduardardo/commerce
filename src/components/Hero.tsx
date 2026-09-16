@@ -20,7 +20,7 @@ const ConversionDashboardGraphic: React.FC<{ title: string; subtitle: string; li
   last7Days,
   newLead,
 }) => (
-  <svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={title}>
+  <svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={title} className="block h-auto w-full" preserveAspectRatio="xMidYMid meet">
     <defs>
       <linearGradient id="panel" x1="80" y1="40" x2="1120" y2="860" gradientUnits="userSpaceOnUse">
         <stop stopColor="#1554D1" />
@@ -140,10 +140,10 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className="flex w-full justify-center lg:col-span-5 lg:justify-end">
-            <div className="animate-hero-panel relative w-full max-w-[390px] lg:max-w-[420px]">
+            <div className="animate-hero-panel relative w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[440px]">
               <div className="absolute -inset-4 rounded-[2rem] bg-[#001b70]/35 blur-2xl" aria-hidden="true" />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/25 bg-[#0036d6]/85 p-1.5 shadow-[0_28px_80px_rgba(2,13,77,0.42)] backdrop-blur-xl sm:p-2.5">
-                <div className="h-auto w-full overflow-hidden rounded-[1.3rem] object-contain">
+                <div className="w-full overflow-hidden rounded-[1.3rem]">
                   <ConversionDashboardGraphic
                     title={copy.hero.dashboardTitle}
                     subtitle={copy.hero.dashboardSubtitle}
