@@ -5,6 +5,13 @@ import { useLanguage } from '../i18n';
 
 export const Footer: React.FC = () => {
   const { copy } = useLanguage();
+  const solutionLinks = [
+    { label: copy.footer.solutionLinks[0], href: '#landing-pages' },
+    { label: copy.footer.solutionLinks[1], href: '#sistemas-web' },
+    { label: copy.footer.solutionLinks[2], href: '#identidade-visual' },
+    { label: copy.footer.solutionLinks[3], href: '#vantagens' },
+  ];
+
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -77,26 +84,13 @@ export const Footer: React.FC = () => {
               {copy.footer.solutions}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <a href="#solucoes" className="hover:text-white transition-colors font-medium">
-                  {copy.footer.solutionLinks[0]}
-                </a>
-              </li>
-              <li>
-                <a href="#solucoes" className="hover:text-white transition-colors font-medium">
-                  {copy.footer.solutionLinks[1]}
-                </a>
-              </li>
-              <li>
-                <a href="#solucoes" className="hover:text-white transition-colors font-medium">
-                  {copy.footer.solutionLinks[2]}
-                </a>
-              </li>
-              <li>
-                <a href="#vantagens" className="hover:text-white transition-colors font-medium">
-                  {copy.footer.solutionLinks[3]}
-                </a>
-              </li>
+              {solutionLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="hover:text-white transition-colors font-medium">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
