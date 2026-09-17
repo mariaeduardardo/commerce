@@ -82,15 +82,15 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="inicio"
-      className="premium-shell bg-[#0241ff] pt-24 pb-16 md:min-h-[720px] md:pt-28 md:pb-20 lg:pt-32 lg:pb-28"
+      className="premium-shell relative overflow-hidden bg-[#0241ff] pt-24 pb-16 md:min-h-[760px] md:pt-28 md:pb-20 lg:pt-32 lg:pb-24"
     >
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-white/10 rounded-full blur-[150px] pointer-events-none -z-10" aria-hidden="true" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#0036d6]/40 rounded-full blur-[120px] pointer-events-none -z-10" aria-hidden="true" />
       <div className="absolute -bottom-10 left-10 w-[400px] h-[400px] bg-white/10 rounded-full blur-[100px] pointer-events-none -z-10" aria-hidden="true" />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="flex flex-col items-start space-y-4 text-left sm:space-y-5 lg:col-span-7 lg:pr-6">
-            <h1 className="animate-hero-rise max-w-[680px] text-[2.35rem] font-black leading-[0.98] tracking-[-0.05em] text-white [animation-delay:90ms] break-words sm:text-4xl md:text-5xl lg:text-[3.8rem] xl:text-[4.35rem]">
+      <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 xl:gap-16">
+          <div className="flex flex-col items-start space-y-4 text-left sm:space-y-5 lg:pr-6 xl:pr-10">
+            <h1 className="animate-hero-rise max-w-[680px] text-[2.35rem] font-black leading-[0.94] tracking-[-0.05em] text-white [animation-delay:90ms] break-words sm:text-4xl md:text-5xl lg:text-[3.7rem] xl:text-[4.5rem] 2xl:text-[5rem]">
               {copy.hero.title}
             </h1>
 
@@ -99,7 +99,7 @@ export const Hero: React.FC = () => {
               <strong className="font-extrabold text-white">{copy.hero.emphasis}</strong>.
             </p>
 
-            <div className="animate-hero-rise flex w-full flex-col items-stretch gap-3 pt-1 [animation-delay:270ms] sm:w-auto sm:flex-row sm:items-center">
+            <div className="animate-hero-rise flex w-full flex-col items-stretch gap-3 pt-1 [animation-delay:270ms] sm:w-auto sm:flex-row sm:items-center lg:max-w-[560px]">
               <a
                 href={SITE_CONFIG.whatsappUrl}
                 target="_blank"
@@ -119,7 +119,7 @@ export const Hero: React.FC = () => {
               </a>
             </div>
 
-            <div className="animate-hero-rise grid w-full grid-cols-1 gap-2.5 border-t border-white/20 pt-4 text-[11px] text-blue-100 [animation-delay:360ms] sm:grid-cols-2 sm:gap-x-4 sm:text-left sm:text-xs lg:grid-cols-3 lg:items-center lg:justify-center lg:text-center lg:[&>*]:justify-center lg:[&>*]:sm:justify-center">
+            <div className="animate-hero-rise grid w-full grid-cols-1 gap-2.5 border-t border-white/20 pt-4 text-[11px] text-blue-100 [animation-delay:360ms] sm:grid-cols-2 sm:gap-x-4 sm:text-left sm:text-xs lg:max-w-[560px] lg:grid-cols-3 lg:items-center lg:justify-center lg:text-center lg:[&>*]:justify-center lg:[&>*]:sm:justify-center">
               <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-2.5 py-2 sm:justify-start lg:justify-center">
                 <CheckCircle2 className="w-4 h-4 text-emerald-300 flex-shrink-0" />
                 <span className="font-medium text-white">{copy.hero.noFee}</span>
@@ -139,8 +139,8 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex w-full justify-center lg:col-span-5 lg:justify-end">
-            <div className="animate-hero-panel relative w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[440px]">
+          <div className="flex w-full justify-center lg:justify-end">
+            <div className="animate-hero-panel relative w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[500px] xl:max-w-[560px]">
               <div className="absolute -inset-4 rounded-[2rem] bg-[#001b70]/35 blur-2xl" aria-hidden="true" />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/25 bg-[#0036d6]/85 p-1.5 shadow-[0_28px_80px_rgba(2,13,77,0.42)] backdrop-blur-xl sm:p-2.5">
                 <div className="w-full overflow-hidden rounded-[1.3rem]">
