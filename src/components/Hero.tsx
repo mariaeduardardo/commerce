@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="inicio"
-      className="premium-shell relative overflow-hidden bg-[#0241ff] pt-24 pb-16 md:min-h-[760px] md:pt-28 md:pb-20 lg:pt-32 lg:pb-24"
+      className="premium-shell relative overflow-hidden bg-[#0241ff] pt-28 pb-16 md:min-h-[760px] md:pt-32 md:pb-20 lg:pt-40 lg:pb-24 xl:pt-[7rem]"
     >
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-white/10 rounded-full blur-[150px] pointer-events-none -z-10" aria-hidden="true" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#0036d6]/40 rounded-full blur-[120px] pointer-events-none -z-10" aria-hidden="true" />
