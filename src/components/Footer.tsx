@@ -9,7 +9,6 @@ export const Footer: React.FC = () => {
     { label: copy.footer.solutionLinks[0], href: '#landing-pages' },
     { label: copy.footer.solutionLinks[1], href: '#sistemas-saas' },
     { label: copy.footer.solutionLinks[2], href: '#identidade-visual' },
-    { label: copy.footer.solutionLinks[3], href: '#performance' },
   ];
 
   const scrollToTop = () => {
