@@ -25,6 +25,7 @@ export const Features: React.FC = () => {
 
   return (
     <section id="vantagens" className="premium-shell relative overflow-hidden bg-[#0241ff] py-16 sm:py-24 lg:py-32">
+      <div id="performance" className="absolute inset-x-0 top-0 h-px" aria-hidden="true" />
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[140px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

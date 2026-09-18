@@ -31,10 +31,11 @@ export const Services: React.FC = () => {
           {copy.servicesData.map((service) => {
             const IconComponent = serviceIcons[service.id as keyof typeof serviceIcons] || Layers;
             const isFeatured = service.recommended;
+            const sectionId = service.id === 'sistemas-web' ? 'sistemas-saas' : service.id;
 
             return (
               <div
-                id={service.id}
+                id={sectionId}
                 key={service.id}
                 className={`group relative flex min-h-[420px] flex-col justify-between overflow-visible rounded-[28px] p-4 pt-8 shadow-[0_18px_48px_rgba(8,28,107,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-white/50 sm:p-5 sm:pt-9 lg:p-6 lg:pt-10 ${
                   isFeatured

@@ -7,9 +7,9 @@ export const Footer: React.FC = () => {
   const { copy } = useLanguage();
   const solutionLinks = [
     { label: copy.footer.solutionLinks[0], href: '#landing-pages' },
-    { label: copy.footer.solutionLinks[1], href: '#sistemas-web' },
+    { label: copy.footer.solutionLinks[1], href: '#sistemas-saas' },
     { label: copy.footer.solutionLinks[2], href: '#identidade-visual' },
-    { label: copy.footer.solutionLinks[3], href: '#vantagens' },
+    { label: copy.footer.solutionLinks[3], href: '#performance' },
   ];
 
   const scrollToTop = () => {
@@ -86,7 +86,17 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm">
               {solutionLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-white transition-colors font-medium">
+                  <a
+                    href={link.href}
+                    onClick={(event) => {
+                      const target = document.querySelector(link.href);
+                      if (target) {
+                        event.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
+                    className="hover:text-white transition-colors font-medium"
+                  >
                     {link.label}
                   </a>
                 </li>
