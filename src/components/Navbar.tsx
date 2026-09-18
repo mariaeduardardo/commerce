@@ -52,12 +52,12 @@ export const Navbar: React.FC = () => {
           : 'bg-[#0241ff]/40 backdrop-blur-sm border-b border-white/15 py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4 md:gap-8">
           {/* Official Logo */}
           <a
             href="#inicio"
-            className="flex min-w-0 items-center gap-2.5 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg min-h-[44px]"
+            className="flex flex-shrink-0 min-w-0 items-center gap-2.5 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg min-h-[44px]"
             aria-label="Commerce Visual - Página Inicial"
           >
             <img
@@ -86,12 +86,12 @@ export const Navbar: React.FC = () => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2 flex-1 justify-center">
             {localizedNavLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3.5 py-2 text-sm font-semibold text-white/90 hover:text-white hover:bg-white/15 rounded-xl transition-all duration-200"
+                className="px-3.5 py-2 text-sm font-semibold text-white/90 hover:text-white hover:bg-white/15 rounded-xl transition-all duration-200 whitespace-nowrap"
               >
                 {link.label}
               </a>
