@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
               aria-label="Commerce Visual - Início"
             >
               <img
-                src="/logo-white.png"
+                src="./logo-white.png"
                 alt="Commerce Visual Logo"
                 width={50}
                 height={40}
