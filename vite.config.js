@@ -24,6 +24,7 @@ var securityHeadersPlugin = {
     },
 };
 export default defineConfig({
+    base: '/commerce/',
     plugins: [react(), securityHeadersPlugin],
     server: {
         host: '0.0.0.0',
