@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
             >
               <img
                 src="./logo-white.png"
-                alt="Commerce Visual Logo"
+                alt="Commerce Visual - Agência de Criação de Sites em Belo Horizonte"
                 width={50}
                 height={40}
                 loading="lazy"

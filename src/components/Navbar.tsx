@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
           >
             <img
               src="./logo-white.png"
-              alt="Commerce Visual Logo"
+              alt="Commerce Visual - Agência de Criação de Sites em Belo Horizonte"
               width={60}
               height={48}
               loading="eager"
@@ -187,7 +187,7 @@ export const Navbar: React.FC = () => {
               className="flex items-center gap-2.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               aria-label="Commerce Visual - Página Inicial"
             >
-              <img src="./logo-white.png" alt="Commerce Visual Logo" width={48} height={40} loading="eager" decoding="async" className="h-10 w-auto max-w-[48px] object-contain" />
+              <img src="./logo-white.png" alt="Commerce Visual - Agência de Criação de Sites em Belo Horizonte" width={48} height={40} loading="eager" decoding="async" className="h-10 w-auto max-w-[48px] object-contain" />
               <span className="text-base font-black tracking-tight text-white">Commerce <span className="font-medium text-blue-100">Visual</span></span>
             </a>
             <button

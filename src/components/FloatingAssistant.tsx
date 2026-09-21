@@ -15,7 +15,7 @@ export const FloatingAssistant: React.FC = () => {
       <span className="absolute -inset-1 -z-10 rounded-full border border-white/30 opacity-0 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100" aria-hidden="true" />
       <img
         src="./img.png"
-        alt=""
+        alt="Assistente virtual da Commerce Visual para criação de sites em Belo Horizonte"
         width={512}
         height={512}
         className="h-full w-full rounded-full object-cover object-top transition-transform duration-300 group-hover:scale-110"

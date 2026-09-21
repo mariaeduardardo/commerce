@@ -102,7 +102,7 @@ export const SERVICES = [
   {
     id: "landing-pages",
     badge: "Mais Procurado",
-    title: "Landing Pages de Alta Conversão",
+    title: "Landing Pages para Vendas",
     description:
       "Páginas ultra-otimizadas para campanhas de tráfego pago (Google Ads, Meta, TikTok) e lançamentos. Arquitetadas para quebrar objeções e gerar mensagens imediatas no seu WhatsApp.",
     features: [
@@ -118,7 +118,7 @@ export const SERVICES = [
   {
     id: "sistemas-saas",
     badge: "Escalabilidade",
-    title: "Sistemas Web & SaaS Sob Medida",
+    title: "Desenvolvimento de Sistemas Web e SaaS",
     description:
       "Aplicações corporativas modernas, painéis de gestão, portais de clientes e plataformas SaaS personalizadas para as regras exclusivas do seu modelo de negócio.",
     features: [
@@ -134,7 +134,7 @@ export const SERVICES = [
   {
     id: "identidade-visual",
     badge: "Autoridade",
-    title: "Identidade Visual & Branding Corporativo",
+    title: "Desenvolvimento de Sites Institucionais",
     description:
       "Posicionamento visual de impacto para empresas que desejam transmitir solidez, sofisticação e cobrar mais pelos seus serviços com uma marca memorável.",
     features: [

@@ -6,7 +6,7 @@ const pt = {
   nav: NAV_LINKS,
   hero: {
     eyebrow: 'Agência Premium',
-    title: 'Seu próximo cliente começa com uma experiência melhor.',
+    title: 'Criação de Sites e Landing Pages de Alta Conversão em Belo Horizonte',
     description: 'Criamos páginas e sistemas que posicionam sua marca, simplificam a decisão de compra e transformam atenção em oportunidades reais.',
     emphasis: 'Você investe uma vez e o projeto é seu',
     primaryCta: 'Quero transformar meu site',

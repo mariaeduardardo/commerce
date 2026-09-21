@@ -63,9 +63,9 @@ export const Services: React.FC = () => {
                     )}
                   </div>
 
-                  <h3 className={`mb-2 text-xl font-black leading-tight ${isFeatured ? 'text-slate-900' : 'text-white'}`}>
+                  <h2 className={`mb-2 text-xl font-black leading-tight ${isFeatured ? 'text-slate-900' : 'text-white'}`}>
                     {service.title}
-                  </h3>
+                  </h2>
                   <p className={`mb-4 text-sm leading-relaxed ${isFeatured ? 'text-slate-600' : 'text-blue-100'}`}>
                     {service.description}
                   </p>
