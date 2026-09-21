@@ -1,0 +1,11 @@
+# Commerce Visual - Robots.txt
+User-agent: *
+Allow: /
+
+# Bloquear rotas de teste/API se houver
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Link para o sitemap do site
+Sitemap: https://www.commercevisual.com.br/sitemap.xml
